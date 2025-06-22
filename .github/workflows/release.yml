@@ -6,6 +6,9 @@ on:
       - 'v*'  # 当推送版本标签时触发，例如 v1.0.0
   workflow_dispatch:  # 允许手动触发
 
+permissions:
+  contents: write
+
 jobs:
   build-windows:
     runs-on: windows-latest
@@ -17,7 +20,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'  # 根据需要调整Flutter版本
+          flutter-version: '3.32.4'  # 根据需要调整Flutter版本
           cache: true
           
       - name: Install dependencies
@@ -48,7 +51,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'  # 根据需要调整Flutter版本
+          flutter-version: '3.32.4'  # 根据需要调整Flutter版本
           cache: true
           
       - name: Install dependencies
